@@ -1,0 +1,13 @@
+Part 1
+efetch -db=sequences -id=NC_0008535.1gb>C.arabica.gbk
+This command fetches the genbank file
+python genbank_to_fasta.py C.arabica.gbk C.arabica.fasta
+This command converts the genbank file into a fasta file
+pwd
+checks what directory I am in (I was in the wrong directory)
+ls
+Lists the files within the working directory
+cd in_class_assignments
+Changes the directory to in_class_assignments where the C.arabica files are saved
+grep -c ">" C.arabica.fasta
+This counts the number of protein sequences within the cholorplast (85)
