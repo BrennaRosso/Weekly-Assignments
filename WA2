@@ -11,3 +11,9 @@ cd in_class_assignments
 Changes the directory to in_class_assignments where the C.arabica files are saved
 grep -c ">" C.arabica.fasta
 This counts the number of protein sequences within the cholorplast (85)
+grep ">" C.arabica.fasta>names.fasta
+This creates a file with the names of all of the protein sequences in the choloroplast sequences
+grep -c "photosystem" C.arabica.fasta
+This counts how many photosystem subunits are present in the chromosome (0)
+sed -n'/CoarCp028/,/CoarCp029/p'C.arabica_ch.fasta| sed'$d">test.fasta
+This extracts the fasta for the ATP synthase CF1 beta subunit
