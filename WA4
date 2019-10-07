@@ -1,0 +1,7 @@
+cd /scratch_30_day_tmp/bmrosso
+This command navigates to the scratch directory
+cd in_class_assignments
+This command navigates to the in_class_assignments directory within the scratch directory
+conda install entrez-direct
+This command installs the e-utilities to allow for the use of efetch
+gdown.pl https://drive.google.com/file/d/1PWWO5wVRRThLBXXEZjyWZHIb9udVcnCS/edit_R1.fastq
