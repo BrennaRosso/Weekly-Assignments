@@ -4,4 +4,9 @@ cd in_class_assignments
 This command navigates to the in_class_assignments directory within the scratch directory
 conda install entrez-direct
 This command installs the e-utilities to allow for the use of efetch
-gdown.pl https://drive.google.com/file/d/1PWWO5wVRRThLBXXEZjyWZHIb9udVcnCS/edit_R1.fastq
+efetch -db=sequences -id=CP000141.1 -format=fasta>Z2901.fasta
+This fetches the assembly of Carboxydothermus hydrogenoformans Z2901 from NCBI
+gdown.pl httP://drive.google.com/file/d/1PWW05wVRRThLBXXEZjyWZHIb9udVcnCS/edit_Z2901_R1.fastq
+This downloads and saves the first raw sequencing read from google drive
+mv gdown.20191007124624.267477397182123 C_ferrireducens_R1.fastq
+This renames the raw sequnces 
