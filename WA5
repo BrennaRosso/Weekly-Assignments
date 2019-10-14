@@ -18,3 +18,4 @@ cd CST7_spades_output
 This moves into the CST7_spades_output directory
 quast contigs.fasta -o Quast_contigs
 This preforms a quality assesment of the assembly data
+The full report of the data that has been manipulated and analyzed is available using the WinSCP app
