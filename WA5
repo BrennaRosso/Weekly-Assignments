@@ -1,10 +1,20 @@
-mkdir resource_announcment
-This creates a new directory called resource_announcment
-gdown.pl https://drive.google.com/open?id=1N9Yfd2uFiDCPTb4M6oqJGT2F7MzSoomM/edit CST7_R1.fasta
-gdown.pl https://drive.google.com/open?id=1_oc15QMOaXGaT0hTxxS2tF477U9ezHcd/edit CST7_R2.fasta
-These two commands download the data off of the google drive and saves it into the resource_announcment directory as CST7_R1.fasta and CST7_R2.fasta
+cd in trimmings
+this moves into the trimmings directory
+gdown.pl https://drive.google.com/open?id=1N9Yfd2uFiDCPTb4M6oqJGT2F7MzSoomM/edit CST7_R1.fastq.gz
+gdown.pl https://drive.google.com/open?id=1_oc15QMOaXGaT0hTxxS2tF477U9ezHcd/edit CST7_R2.fastq.gz
+These two commands download the data off of the google drive and saves it into the trimming directory as CST7_R1.fastq.gz and CST7_R2.fastq.gz
 fastqc CST7_R1.fastq.gz
 fastqc CST7_R2.fastq.gz
 These two commands provide quality control data for the two downloaded sequences
 cutadapt -q 20,20 -a CTGTCTCTTATACACATCTCCGAGCCCACGAGAC -A CTGTCTCTTATACACATCTGACGCTGCCGACGA -m 50 --max-n 0 -o CST7_R1.cutadapt.fastq -p CST7_R2.cutadapt.fastq CST7_R1.fastq.gz CST7_R2.fastq.gz
 This provides quality trimming for the two sequences
+cp trimming/ CST7_R1.cutadapt.fastq de_novo_assembly/
+cp trimming/ CST7_R2.cutadapt.fastq de_novo_assembly/
+These commands moves the cutadapt files into the de_novo_assembly directory
+conda activate de_novo
+spades.py -k 21,51,71,91,111,127 --careful --pe1-1 CST7_R1.cutadapt.fastq --pe1-2 CST7_R2.cutadapt.fastq -o CST7_spades_output
+This preforms de novo assembly on the CST7 data
+cd CST7_spades_output
+This moves into the CST7_spades_output directory
+quast contigs.fasta -o Quast_contigs
+This preforms a quality assesment of the assembly data
