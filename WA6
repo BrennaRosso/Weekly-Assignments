@@ -1,0 +1,14 @@
+cd /scratch_30_day_tmp/bmrosso
+This command navigates to the scratch 30 day directory
+cd in_class_assignments 
+This command navigates into the in_class_assignments directory
+wget https://github.com/stechtmann/BL4300-5300/raw/master/data/Weekly_Assignment_data/Unk_therm.faa
+This command downloads a list of proteins from an unknown thermophile
+makeblastdb -in Unk_therm.faa prot -title Unk_therm
+This command makes a blastable database from these protein sequences
+wget https://github.com/stechtmann/BL4300-5300/raw/master/data/Weekly_Assignment_data/HSP_prot.fasta
+This command downloads the data for the HSP protein
+blastp -dp Unk_therm.faa -query HSP_prot.fasta -out HSP_BLAST.txt -outfmt 7
+This command queries the blastable database with hsp.fasta
+cat HSP_BLAST.txt
+This command allows me to view the .txt file from the command line
