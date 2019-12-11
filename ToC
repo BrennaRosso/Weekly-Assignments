@@ -1,0 +1,12 @@
+I searched for high quality fully completed ZIKV genomes within the NCBI database
+Once I located 10 I copied and pasted them one by one into a word document
+I was then able to edit the names of the genomes so the would appear in a readable format within the phlyogenic tree
+To do this I replaced the word after the ">"
+There can only be one word after the ">" so for countries with two words in the name an underscore was used
+After the document was properly edited I copied and pasted the entire text in to MUSCLE
+After hitting submit MUSCLE produced a CLUSTAL multiple sequence alignment
+There was a button that would tell MUSCLE to produce a cladogram from the alignment
+This is how the cladogram is made
+After this I took the data given from MUSCLE labled "Tree Data" and copied it into Google Sheets
+Here I was able to produce a chart that showed the percent similarity to the reference genome which was the isolate from the Philippines
+I was also able to produce a map chart from this percent similarity chart that geographically labled the percent similarity to the reference genome
